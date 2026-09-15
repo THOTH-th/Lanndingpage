@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <meta name="description" content="A clean, responsive landing page starter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Brand</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-sm" href="#contact">Get Started</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Welcome</p>
+        <h1>Build something people love.</h1>
+        <p class="lead">
+          A fast, responsive landing page starter. Swap in your own copy, colors, and images
+          to launch your product, service, or portfolio in minutes.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#contact">Get Started</a>
+          <a class="btn btn-ghost" href="#features">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <h2>Everything you need</h2>
+          <p>Clean structure, sensible defaults, and zero dependencies.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">⚡</div>
+            <h3>Fast by default</h3>
+            <p>Plain HTML, CSS, and a touch of JavaScript. No build step, no bloat.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📱</div>
+            <h3>Fully responsive</h3>
+            <p>Looks great on phones, tablets, and desktops out of the box.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🎨</div>
+            <h3>Easy to theme</h3>
+            <p>Change a few CSS variables to match your brand instantly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section section-alt" id="about">
+      <div class="container about-inner">
+        <div>
+          <h2>About this project</h2>
+          <p>
+            This is a starter template you can customize freely. Replace this text with your
+            story, mission, or product details. Add images, testimonials, or anything else
+            that helps visitors understand what you offer.
+          </p>
+          <a class="btn btn-ghost" href="#contact">Talk to us</a>
+        </div>
+        <ul class="stats">
+          <li><strong>100%</strong><span>Responsive</span></li>
+          <li><strong>0</strong><span>Dependencies</span></li>
+          <li><strong>&lt;5min</strong><span>To customize</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <h2>Simple pricing</h2>
+          <p>Placeholder tiers — edit or remove as you like.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card price">
+            <h3>Starter</h3>
+            <p class="amount">Free</p>
+            <ul>
+              <li>Core features</li>
+              <li>Community support</li>
+              <li>1 project</li>
+            </ul>
+            <a class="btn btn-ghost" href="#contact">Choose</a>
+          </article>
+          <article class="card price featured">
+            <span class="badge">Popular</span>
+            <h3>Pro</h3>
+            <p class="amount">$9<span>/mo</span></p>
+            <ul>
+              <li>Everything in Starter</li>
+              <li>Priority support</li>
+              <li>Unlimited projects</li>
+            </ul>
+            <a class="btn" href="#contact">Choose</a>
+          </article>
+          <article class="card price">
+            <h3>Team</h3>
+            <p class="amount">$29<span>/mo</span></p>
+            <ul>
+              <li>Everything in Pro</li>
+              <li>Team collaboration</li>
+              <li>Advanced analytics</li>
+            </ul>
+            <a class="btn btn-ghost" href="#contact">Choose</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="section cta" id="contact">
+      <div class="container cta-inner">
+        <h2>Ready to get started?</h2>
+        <p>Leave your email and we'll be in touch.</p>
+        <form class="contact-form" id="contactForm" novalidate>
+          <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required />
+          <button class="btn" type="submit">Notify me</button>
+        </form>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Brand. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
