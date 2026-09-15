@@ -2,170 +2,451 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landing Page</title>
-  <meta name="description" content="A clean, responsive landing page starter." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- ===== SEO ===== -->
+  <title>Thai Audio Recording Project | สมัครเข้าร่วมโครงการ</title>
+  <meta name="description" content="สมัครเข้าร่วมโครงการบันทึกเสียงภาษาไทยเพื่อสนับสนุนการพัฒนาเทคโนโลยี AI ตรวจสอบคุณสมบัติ รายละเอียดโครงการ และขั้นตอนการสมัคร" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0f2544" />
+  <link rel="canonical" href="/" />
+
+  <!-- ===== Open Graph / Social preview ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Thai Audio Recording Project | สมัครเข้าร่วมโครงการ" />
+  <meta property="og:description" content="สมัครเข้าร่วมโครงการบันทึกเสียงภาษาไทยเพื่อสนับสนุนการพัฒนาเทคโนโลยี AI ตรวจสอบคุณสมบัติและขั้นตอนการสมัคร" />
+  <!-- แทนที่ด้วยรูปพรีวิวจริง ขนาดแนะนำ 1200x630 -->
+  <meta property="og:image" content="assets/img/og-image.svg" />
+  <meta property="og:locale" content="th_TH" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ===== Favicon (placeholder — แทนที่ด้วยโลโก้จริง) ===== -->
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+  <!-- ===== Fonts: IBM Plex Sans Thai (รองรับไทย + อังกฤษ) ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!--
+    ============================================================
+    GOOGLE TAG MANAGER / GA4
+    สคริปต์จะโหลดอัตโนมัติเมื่อใส่ ID จริงใน assets/js/config.js
+    (analytics.gtmId = "[GTM_ID]"  →  "GTM-XXXXXXX")
+    (analytics.ga4Id = "[GA4_ID]"  →  "G-XXXXXXXXXX")
+    ============================================================
+  -->
+
+  <!-- โหลด config + tracking ก่อน analytics เพื่อให้ค่าพร้อมใช้งาน -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/tracking.js"></script>
+  <script src="assets/js/analytics.js"></script>
 </head>
 <body>
-  <!-- Header -->
+  <!-- GTM noscript (ทำงานเมื่อกำหนด GTM_ID จริงเท่านั้น) -->
+
+  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหาหลัก</a>
+
+  <!-- ======================= HEADER ======================= -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="#top">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name">Brand</span>
+      <a class="brand" href="#top" aria-label="Thai Audio Recording Project">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Zm7 9a1 1 0 1 0-2 0 5 5 0 0 1-10 0 1 1 0 1 0-2 0 7 7 0 0 0 6 6.92V21a1 1 0 1 0 2 0v-2.08A7 7 0 0 0 19 12Z"/></svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Thai Audio</span>
+          <span class="brand-sub" data-cfg="org">THOTH / AI THOTH</span>
+        </span>
       </a>
 
-      <nav class="nav" id="nav">
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-        <a class="btn btn-sm" href="#contact">Get Started</a>
+      <nav class="nav" id="nav" aria-label="เมนูหลัก">
+        <a href="#about">เกี่ยวกับโครงการ</a>
+        <a href="#how">ขั้นตอน</a>
+        <a href="#eligibility">คุณสมบัติ</a>
+        <a href="#compensation">ค่าตอบแทน</a>
+        <a href="#faq">คำถามที่พบบ่อย</a>
+        <a class="btn btn-sm" href="#register" data-cta-apply="header">สมัครเข้าร่วมโครงการ</a>
       </nav>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="nav-toggle" id="navToggle" aria-label="เปิด/ปิดเมนู" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
+  <main id="main">
+    <!-- ======================= 1. HERO ======================= -->
+    <section class="hero" id="hero">
       <div class="container hero-inner">
-        <p class="eyebrow">Welcome</p>
-        <h1>Build something people love.</h1>
-        <p class="lead">
-          A fast, responsive landing page starter. Swap in your own copy, colors, and images
-          to launch your product, service, or portfolio in minutes.
-        </p>
-        <div class="hero-actions">
-          <a class="btn" href="#contact">Get Started</a>
-          <a class="btn btn-ghost" href="#features">Learn more</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features -->
-    <section class="section" id="features">
-      <div class="container">
-        <div class="section-head">
-          <h2>Everything you need</h2>
-          <p>Clean structure, sensible defaults, and zero dependencies.</p>
-        </div>
-        <div class="grid grid-3">
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">⚡</div>
-            <h3>Fast by default</h3>
-            <p>Plain HTML, CSS, and a touch of JavaScript. No build step, no bloat.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">📱</div>
-            <h3>Fully responsive</h3>
-            <p>Looks great on phones, tablets, and desktops out of the box.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">🎨</div>
-            <h3>Easy to theme</h3>
-            <p>Change a few CSS variables to match your brand instantly.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="section section-alt" id="about">
-      <div class="container about-inner">
-        <div>
-          <h2>About this project</h2>
-          <p>
-            This is a starter template you can customize freely. Replace this text with your
-            story, mission, or product details. Add images, testimonials, or anything else
-            that helps visitors understand what you offer.
+        <div class="hero-copy">
+          <p class="eyebrow">โครงการบันทึกเสียงภาษาไทย</p>
+          <h1>ร่วมเป็นส่วนหนึ่งในการพัฒนาเทคโนโลยี AI ผ่านโครงการบันทึกเสียงภาษาไทย</h1>
+          <p class="lead">
+            เปิดรับผู้เข้าร่วมโครงการบันทึกเสียงภาษาไทยผ่านสมาร์ตโฟน ทำตามขั้นตอนที่กำหนด
+            พร้อมรับค่าตอบแทนเมื่อผ่านเงื่อนไขของโครงการ
           </p>
-          <a class="btn btn-ghost" href="#contact">Talk to us</a>
+
+          <div class="hero-actions">
+            <a class="btn btn-lg" href="#register" data-cta-apply="hero">สมัครเข้าร่วมโครงการ</a>
+            <a class="btn btn-lg btn-ghost" href="#how" data-cta-eligibility="hero">ดูขั้นตอนการเข้าร่วม</a>
+          </div>
+
+          <ul class="hero-badges" id="heroBadges" aria-label="จุดเด่นของโครงการ"></ul>
         </div>
-        <ul class="stats">
-          <li><strong>100%</strong><span>Responsive</span></li>
-          <li><strong>0</strong><span>Dependencies</span></li>
-          <li><strong>&lt;5min</strong><span>To customize</span></li>
-        </ul>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="waveform">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="hero-visual__label">
+            <span class="hero-visual__dot"></span> บันทึกเสียงภาษาไทยผ่านสมาร์ตโฟน
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Pricing -->
-    <section class="section" id="pricing">
+    <!-- ======================= TRUST BAR ======================= -->
+    <section class="trustbar" aria-label="ข้อมูลโครงการโดยสรุป">
+      <div class="container trustbar-inner">
+        <div class="trust-item">
+          <span class="trust-item__label">ดำเนินการโดย</span>
+          <strong data-cfg="org">THOTH / AI THOTH</strong>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__label">เป้าหมายโครงการ</span>
+          <strong><span data-cfg="targetPairs">500</span> คู่ที่ผ่านคุณสมบัติ</strong>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__label">ภายในวันที่</span>
+          <strong data-cfg="deadline">31 ธันวาคม 2026</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 2. ABOUT / TRUST ======================= -->
+    <section class="section" id="about">
       <div class="container">
         <div class="section-head">
-          <h2>Simple pricing</h2>
-          <p>Placeholder tiers — edit or remove as you like.</p>
+          <h2>เกี่ยวกับโครงการ</h2>
+          <p>
+            โครงการบันทึกเสียงภาษาไทยรวบรวมข้อมูลเสียงภาษาไทย เพื่อสนับสนุนการพัฒนาเทคโนโลยี
+            ด้านเสียงและปัญญาประดิษฐ์ (AI) ผู้เข้าร่วมจะทำงานบันทึกเสียงตามคำแนะนำผ่านสมาร์ตโฟน
+          </p>
         </div>
-        <div class="grid grid-3">
-          <article class="card price">
-            <h3>Starter</h3>
-            <p class="amount">Free</p>
-            <ul>
-              <li>Core features</li>
-              <li>Community support</li>
-              <li>1 project</li>
+
+        <div class="about-grid">
+          <div class="info-card">
+            <h3>ดำเนินการโดย</h3>
+            <p><strong data-cfg="org">THOTH / AI THOTH</strong></p>
+            <dl class="meta-list">
+              <div><dt>ชื่อนิติบุคคล</dt><dd data-cfg="orgLegalName">[COMPANY_LEGAL_NAME]</dd></div>
+              <div><dt>เลขทะเบียน</dt><dd data-cfg="orgRegistrationNo">[COMPANY_REGISTRATION_NO]</dd></div>
+              <div><dt>อีเมล</dt><dd><a data-cfg="email" href="#contact">[PROJECT_EMAIL]</a></dd></div>
+              <div><dt>โทรศัพท์</dt><dd><a data-cfg="phone" href="#contact">[PROJECT_PHONE]</a></dd></div>
+            </dl>
+          </div>
+          <div class="info-card">
+            <h3>ความโปร่งใสของโครงการ</h3>
+            <ul class="plain-list">
+              <li>ทีมงานตรวจสอบคุณสมบัติผู้สมัครทุกราย</li>
+              <li>ค่าตอบแทนพิจารณาตามเงื่อนไขและผลการตรวจสอบคุณภาพ</li>
+              <li>มีนโยบายความเป็นส่วนตัวและเงื่อนไขการใช้ข้อมูลชัดเจน</li>
             </ul>
-            <a class="btn btn-ghost" href="#contact">Choose</a>
-          </article>
-          <article class="card price featured">
-            <span class="badge">Popular</span>
-            <h3>Pro</h3>
-            <p class="amount">$9<span>/mo</span></p>
-            <ul>
-              <li>Everything in Starter</li>
-              <li>Priority support</li>
-              <li>Unlimited projects</li>
-            </ul>
-            <a class="btn" href="#contact">Choose</a>
-          </article>
-          <article class="card price">
-            <h3>Team</h3>
-            <p class="amount">$29<span>/mo</span></p>
-            <ul>
-              <li>Everything in Pro</li>
-              <li>Team collaboration</li>
-              <li>Advanced analytics</li>
-            </ul>
-            <a class="btn btn-ghost" href="#contact">Choose</a>
-          </article>
+            <p class="fineprint">
+              ดู <a data-cfg="privacyUrl" href="#">นโยบายความเป็นส่วนตัว</a> และ
+              <a data-cfg="termsUrl" href="#">ข้อกำหนดการเข้าร่วมโครงการ</a>
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact / CTA -->
-    <section class="section cta" id="contact">
-      <div class="container cta-inner">
-        <h2>Ready to get started?</h2>
-        <p>Leave your email and we'll be in touch.</p>
-        <form class="contact-form" id="contactForm" novalidate>
-          <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required />
-          <button class="btn" type="submit">Notify me</button>
-        </form>
-        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+    <!-- ======================= 3. HOW IT WORKS ======================= -->
+    <section class="section section-alt" id="how">
+      <div class="container">
+        <div class="section-head">
+          <h2>ขั้นตอนการเข้าร่วม</h2>
+          <p>เข้าใจง่าย 6 ขั้นตอน ตั้งแต่สมัครจนถึงรับค่าตอบแทน</p>
+        </div>
+        <ol class="steps-grid" id="stepsGrid"></ol>
+      </div>
+    </section>
+
+    <!-- ======================= 4. WHO CAN JOIN ======================= -->
+    <section class="section" id="eligibility">
+      <div class="container">
+        <div class="section-head">
+          <h2>คุณเหมาะกับโครงการนี้ หากคุณ...</h2>
+          <p>โปรดตรวจสอบคุณสมบัติก่อนสมัคร</p>
+        </div>
+        <ul class="check-list two-col" id="eligibilityList"></ul>
+        <div class="section-cta">
+          <a class="btn" href="#register" data-cta-apply="eligibility">สมัครเข้าร่วมโครงการ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 5. WHAT PARTICIPANTS DO ======================= -->
+    <section class="section section-alt" id="tasks">
+      <div class="container">
+        <div class="section-head">
+          <h2>สิ่งที่ผู้เข้าร่วมจะทำ</h2>
+          <p>ผู้เข้าร่วมจะทำงานบันทึกเสียงตามคำแนะนำของโครงการผ่านสมาร์ตโฟน</p>
+        </div>
+        <div class="panel">
+          <ul class="dot-list" id="tasksList"></ul>
+          <p class="callout" data-cfg="tasksNote">รายละเอียดของแต่ละงานอาจแตกต่างกันตามรอบของโครงการ</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 6. TIME COMMITMENT ======================= -->
+    <section class="section" id="time">
+      <div class="container narrow">
+        <div class="highlight-row">
+          <div class="highlight-row__icon" aria-hidden="true">⏱️</div>
+          <div>
+            <h2 class="h3">ระยะเวลาที่ใช้โดยประมาณ</h2>
+            <p class="big-value">ประมาณ <span data-cfg="duration">[ESTIMATED_DURATION]</span></p>
+            <p class="muted" data-cfg="durationNote">ระยะเวลาจริงอาจแตกต่างกันตามประเภทงานและความเร็วในการทำงานของผู้เข้าร่วม</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 7. COMPENSATION ======================= -->
+    <section class="section section-alt" id="compensation">
+      <div class="container narrow">
+        <div class="comp-card">
+          <p class="comp-card__label">ค่าตอบแทน</p>
+          <p class="comp-card__amount">สูงสุด <span data-cfg="compAmountInline">[COMPENSATION_AMOUNT]</span> บาท</p>
+          <p class="comp-card__note" data-cfg="compNote">
+            ค่าตอบแทนขึ้นอยู่กับประเภทของงาน การทำงานครบตามข้อกำหนด และผลการตรวจสอบคุณภาพ
+          </p>
+          <ul class="comp-card__points">
+            <li>ไม่มีการจ่ายค่าตอบแทนก่อนผ่านการตรวจสอบคุณสมบัติและคุณภาพ</li>
+            <li>เงื่อนไขการจ่ายค่าตอบแทนเป็นไปตามที่โครงการกำหนด</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 8. REQUIREMENTS ======================= -->
+    <section class="section" id="requirements">
+      <div class="container">
+        <div class="section-head">
+          <h2>คุณสมบัติผู้เข้าร่วม</h2>
+          <p>โปรดตรวจสอบให้ครบก่อนสมัคร เพื่อให้กระบวนการตรวจสอบเป็นไปอย่างรวดเร็ว</p>
+        </div>
+        <ul class="check-list two-col" id="requirementsList"></ul>
+      </div>
+    </section>
+
+    <!-- ======================= 9. DEVICE & ENVIRONMENT ======================= -->
+    <section class="section section-alt" id="device">
+      <div class="container">
+        <div class="section-head">
+          <h2>อุปกรณ์และสภาพแวดล้อม</h2>
+          <p>เตรียมความพร้อมก่อนเริ่มงานบันทึกเสียง</p>
+        </div>
+        <div class="two-cards">
+          <div class="req-card">
+            <h3><span class="req-card__icon" aria-hidden="true">📱</span> สมาร์ตโฟน</h3>
+            <ul class="check-list" id="deviceList"></ul>
+            <p class="fineprint" data-cfg="deviceNote"></p>
+          </div>
+          <div class="req-card">
+            <h3><span class="req-card__icon" aria-hidden="true">🔇</span> สภาพแวดล้อมการบันทึก</h3>
+            <ul class="check-list" id="environmentList"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 10. WHY JOIN ======================= -->
+    <section class="section" id="benefits">
+      <div class="container">
+        <div class="section-head">
+          <h2>ทำไมจึงควรเข้าร่วม</h2>
+        </div>
+        <div class="benefits-grid" id="benefitsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ======================= 11. REGISTRATION CTA + FORM ======================= -->
+    <section class="section section-cta-band">
+      <div class="container narrow center">
+        <h2>พร้อมเข้าร่วมโครงการแล้วหรือยัง?</h2>
+        <p class="lead">
+          ใช้เวลาเพียงไม่กี่นาทีในการลงทะเบียนเบื้องต้น ทีมงานจะตรวจสอบคุณสมบัติและติดต่อกลับพร้อมขั้นตอนถัดไป
+        </p>
+        <div class="hero-actions center">
+          <a class="btn btn-lg" href="#register" data-cta-apply="cta_band">สมัครเข้าร่วมโครงการ</a>
+          <a class="btn btn-lg btn-ghost" href="#eligibility" data-cta-eligibility="cta_band">ตรวจสอบคุณสมบัติก่อนสมัคร</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="register">
+      <div class="container narrow">
+        <div class="section-head">
+          <h2>สมัครเข้าร่วมโครงการ</h2>
+          <p>กรอกข้อมูลเบื้องต้นด้านล่าง ทีมงานจะตรวจสอบคุณสมบัติและติดต่อกลับ</p>
+        </div>
+
+        <!-- MODE A — external form -->
+        <div id="externalForm" class="form-card center" hidden>
+          <p>คลิกปุ่มด้านล่างเพื่อกรอกแบบฟอร์มลงทะเบียน</p>
+          <a class="btn btn-lg" data-cta-apply="external_button" href="#">เปิดแบบฟอร์มลงทะเบียน</a>
+        </div>
+
+        <!-- MODE B — native form -->
+        <div id="nativeForm" hidden>
+          <div class="form-card" id="formCard">
+            <form id="registrationForm" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="f_name">ชื่อจริง / ชื่อเล่น <span class="req">*</span></label>
+                  <input id="f_name" name="name" type="text" autocomplete="name" required placeholder="เช่น สมชาย / ต้น" />
+                </div>
+                <div class="field">
+                  <label for="f_age">กลุ่มอายุ <span class="req">*</span></label>
+                  <select id="f_age" name="age_group" required></select>
+                </div>
+                <div class="field">
+                  <label for="f_province">จังหวัด <span class="req">*</span></label>
+                  <select id="f_province" name="province" required></select>
+                </div>
+                <div class="field">
+                  <label for="f_phone">เบอร์มือถือ <span class="req">*</span></label>
+                  <input id="f_phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
+                         pattern="[0-9+\-\s]{9,15}" required placeholder="08XXXXXXXX" />
+                </div>
+                <div class="field">
+                  <label for="f_email">อีเมล <span class="req">*</span></label>
+                  <input id="f_email" name="email" type="email" inputmode="email" autocomplete="email"
+                         required placeholder="you@example.com" />
+                </div>
+                <div class="field">
+                  <label for="f_device">ประเภท/รุ่นอุปกรณ์ <span class="req">*</span></label>
+                  <select id="f_device" name="device" required></select>
+                </div>
+                <div class="field">
+                  <label for="f_pair">สถานะการจับคู่ <span class="req">*</span></label>
+                  <select id="f_pair" name="pair_status" required></select>
+                </div>
+                <div class="field">
+                  <label for="f_referral">แหล่งที่มา / ผู้แนะนำ</label>
+                  <input id="f_referral" name="referral" type="text" placeholder="เช่น เพื่อนแนะนำ / ชื่อกลุ่ม / รหัสแคมเปญ" />
+                </div>
+              </div>
+
+              <div class="field">
+                <span class="field-label">ช่วงเวลาที่สะดวก</span>
+                <div class="pill-group" id="f_availability"></div>
+              </div>
+
+              <label class="consent">
+                <input type="checkbox" id="f_consent" name="consent" value="yes" />
+                <span>
+                  ข้าพเจ้าได้อ่านและยอมรับ
+                  <a data-cfg="termsUrl" href="#">เงื่อนไขการเข้าร่วมโครงการ</a> และ
+                  <a data-cfg="privacyUrl" href="#">นโยบายความเป็นส่วนตัว</a>
+                </span>
+              </label>
+
+              <button class="btn btn-lg btn-block" type="submit" id="submitBtn"
+                      data-cta-apply="form_submit_button">สมัครเข้าร่วมโครงการ</button>
+              <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+
+              <p class="fineprint">
+                เราขอเก็บเฉพาะข้อมูลที่จำเป็นต่อการตรวจสอบคุณสมบัติเบื้องต้นเท่านั้น
+                และจะไม่ขอเลขบัตรประชาชน ข้อมูลบัญชีธนาคาร หรือข้อมูลอ่อนไหวในขั้นตอนนี้
+              </p>
+            </form>
+          </div>
+
+          <!-- THANK YOU -->
+          <div class="thankyou" id="thankYou" hidden>
+            <div class="thankyou__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="56" height="56"><circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="3" opacity=".3"/><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="m15 24 6 6 12-12"/></svg>
+            </div>
+            <h3>ลงทะเบียนเรียบร้อยแล้ว</h3>
+            <p>ขอบคุณที่สนใจเข้าร่วมโครงการ Thai Audio ทีมงานจะตรวจสอบข้อมูลและติดต่อกลับหากคุณผ่านคุณสมบัติเบื้องต้น</p>
+            <a class="btn btn-ghost" href="#top">กลับหน้าหลัก</a>
+          </div>
+        </div>
+
+        <!-- Disclaimers -->
+        <div class="disclaimer">
+          <p>การลงทะเบียนไม่ได้หมายความว่าจะได้รับสิทธิ์เข้าร่วมโครงการโดยอัตโนมัติ ผู้สมัครต้องผ่านการตรวจสอบคุณสมบัติและเงื่อนไขของโครงการ</p>
+          <p>ค่าตอบแทนเป็นไปตามประเภทงาน เงื่อนไขการทำงาน และผลการตรวจสอบคุณภาพ</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 12. FAQ ======================= -->
+    <section class="section section-alt" id="faq">
+      <div class="container narrow">
+        <div class="section-head">
+          <h2>คำถามที่พบบ่อย</h2>
+        </div>
+        <div class="faq-list" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- ======================= 13. CONTACT ======================= -->
+    <section class="section" id="contact">
+      <div class="container narrow">
+        <div class="section-head">
+          <h2>ติดต่อทีมงาน</h2>
+          <p>หากมีคำถามเพิ่มเติม สามารถติดต่อได้ตามช่องทางด้านล่าง</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-item"><span class="contact-item__label">อีเมล</span><a data-cfg="email" href="#">[PROJECT_EMAIL]</a></div>
+          <div class="contact-item"><span class="contact-item__label">โทรศัพท์</span><a data-cfg="phone" href="#">[PROJECT_PHONE]</a></div>
+          <div class="contact-item"><span class="contact-item__label">LINE</span><span data-cfg="line">[LINE_CONTACT]</span></div>
+          <div class="contact-item"><span class="contact-item__label">เวลาทำการ</span><span data-cfg="hours">[BUSINESS_HOURS]</span></div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- ======================= FOOTER ======================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Brand. All rights reserved.</p>
-      <nav class="footer-nav">
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
+      <div class="footer-brand">
+        <strong>Thai Audio Recording Project</strong>
+        <span data-cfg="org">THOTH / AI THOTH</span>
+      </div>
+      <nav class="footer-nav" aria-label="ลิงก์นโยบาย">
+        <a data-cfg="privacyUrl" href="#">นโยบายความเป็นส่วนตัว</a>
+        <a data-cfg="termsUrl" href="#">ข้อกำหนดการเข้าร่วมโครงการ</a>
+        <a data-cfg="dataUseUrl" href="#">เงื่อนไขการใช้ข้อมูล</a>
       </nav>
+    </div>
+    <div class="container footer-legal">
+      <p>&copy; <span id="year"></span> <span data-cfg="org">THOTH / AI THOTH</span>. สงวนลิขสิทธิ์.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- ======================= STICKY MOBILE CTA ======================= -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta__inner">
+      <div class="sticky-cta__text">
+        <strong>ค่าตอบแทนสูงสุด <span data-cfg="compAmountInline">[COMPENSATION_AMOUNT]</span> บาท</strong>
+        <span>สมัครและตรวจสอบคุณสมบัติได้เลย</span>
+      </div>
+      <a class="btn" href="#register" data-cta-apply="sticky">สมัคร</a>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Placeholder favicon — แทนที่ด้วยโลโก้จริงของโครงการ -->
+  <rect width="64" height="64" rx="14" fill="#0f2544"/>
+  <path fill="#0ea5a4" d="M32 14a7 7 0 0 0-7 7v12a7 7 0 0 0 14 0V21a7 7 0 0 0-7-7Z"/>
+  <path fill="#5a94e6" d="M46 32a2 2 0 0 0-4 0 10 10 0 0 1-20 0 2 2 0 0 0-4 0 14 14 0 0 0 12 13.86V50a2 2 0 0 0 4 0v-4.14A14 14 0 0 0 46 32Z"/>
+</svg>

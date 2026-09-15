@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Placeholder social preview (1200x630) — แทนที่ด้วยรูปจริงเมื่อพร้อม -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f2544"/>
+      <stop offset="1" stop-color="#16335c"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0ea5a4"/>
+      <stop offset="1" stop-color="#5a94e6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g fill="url(#wave)">
+    <rect x="120" y="300" width="16" height="60" rx="8"/>
+    <rect x="150" y="270" width="16" height="120" rx="8"/>
+    <rect x="180" y="240" width="16" height="180" rx="8"/>
+    <rect x="210" y="290" width="16" height="80" rx="8"/>
+    <rect x="240" y="250" width="16" height="160" rx="8"/>
+    <rect x="270" y="220" width="16" height="220" rx="8"/>
+    <rect x="300" y="285" width="16" height="90" rx="8"/>
+    <rect x="330" y="260" width="16" height="140" rx="8"/>
+  </g>
+  <text x="120" y="200" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="40" fill="#a9c0dc">THOTH / AI THOTH</text>
+  <text x="120" y="490" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="66" font-weight="700" fill="#ffffff">Thai Audio Recording Project</text>
+  <text x="120" y="560" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="38" fill="#cfe0f2">โครงการบันทึกเสียงภาษาไทย · สมัครเข้าร่วมโครงการ</text>
+</svg>
